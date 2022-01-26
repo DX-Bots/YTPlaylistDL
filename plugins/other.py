@@ -23,9 +23,13 @@ async def start_msg(client, message):
 	await message.reply_text(
 		f"Hi {message.from_user.mention},If you need any help, Just click help button.\n\nProject by @Harp_Tech",
 		reply_markup=InlineKeyboardMarkup(
+                                [[
+					InlineKeyboardButton("⭕ Channel ⭕", url="https://t.me/TeleRoidGroup"),
+					InlineKeyboardButton("😇 Support", url="https://t.me/TeleRoid14")
+				]],
 				[[
-					InlineKeyboardButton("🛠 Help", callback_data=f"help"),
-					InlineKeyboardButton("🧰 About", callback_data=f"about")
+					InlineKeyboardButton("🆘 Help", callback_data=f"help"),
+					InlineKeyboardButton("👥 About", callback_data=f"about")
 				]]
 			),
 		quote=True)
@@ -38,23 +42,23 @@ async def cb_handler(client, update):
 		await update.message.edit_text("Just Send URL with Format.(Audio/Video)\nExample: `https://youtube.com/playlist?list=xxxxxxxxxx audio`\n\nPowered by @Harp_Tech",
 			reply_markup=InlineKeyboardMarkup(
 				[[
-					InlineKeyboardButton("🧰 About", callback_data=f"about"),
+					InlineKeyboardButton("👥 About", callback_data=f"about"),
 					InlineKeyboardButton("🔙 Back", callback_data=f"back")
 				]]
 			))
 	elif "about" in cb_data:
-		await update.message.edit_text("Language: Python\nFramework: Pyrogram\nEngine: YTDL\nCorded By: @Anjana_Ma\n\nPowered by @Harp_Tech",
+		await update.message.edit_text("Language: Python\nFramework: Pyrogram\nEngine: YTDL\nCorded By: @Anjana_Ma\n\nMade With Love By @TheTeleRoid",
 			reply_markup=InlineKeyboardMarkup(
 				[[
-					InlineKeyboardButton("🛠 Help", callback_data=f"help"),
+					InlineKeyboardButton("🆘 Help", callback_data=f"help"),
 					InlineKeyboardButton("🔙 Back", callback_data=f"back")
 				]]
 			))
 	elif "back" in cb_data:
-		await update.message.edit_text(f"Hi {update.from_user.mention},If you need any help, Just click help button.\n\nProject by @Harp_Tech",
+		await update.message.edit_text(f"Hi {update.from_user.mention},If you need any help, Just click help button.\n\nBot Made By ❤ @TheTeleRoid",
 			reply_markup=InlineKeyboardMarkup(
 				[[
-					InlineKeyboardButton("🛠 Help", callback_data=f"help"),
-					InlineKeyboardButton("🧰 About", callback_data=f"about")
+					InlineKeyboardButton("🆘 Help", callback_data=f"help"),
+					InlineKeyboardButton("👥 About", callback_data=f"about")
 				]]
 			))
